@@ -1,7 +1,7 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
 const link = new HttpLink({
-  uri: "http://localhost:400",
+  uri: "https://dream-workshop.herokuapp.com/",
   credentials: "same-origin",
 });
 
