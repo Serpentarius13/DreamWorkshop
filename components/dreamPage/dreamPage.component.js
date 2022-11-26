@@ -8,7 +8,7 @@ const DreamPage = ({ dreams }) => {
     <div className={styles.pageBox}>
       <div className={styles.reel}>
         {dreams.map((dream) => (
-          <DreamItem data={dream} size={true} />
+          <DreamItem key={dreams.indexOf(dream)} data={dream} size={true} />
         ))}
       </div>
     </div>

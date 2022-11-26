@@ -6,17 +6,11 @@ import Link from "next/link";
 
 const Modal = ({ dream, message, linkTo }) => {
   const router = useRouter();
-
-  if (!message) return;
-
   const style = message === "Success" ? true : false;
 
-  const [visibility, setVisibility] = useState(null);
+  const [visibility, setVisibility] = useState(1);
 
-  useEffect(() => {
-    setVisibility(1);
-  }, []);
-
+  if (!message) return;
   if (!visibility) return;
 
   const routerGo = () => {
@@ -49,7 +43,6 @@ const Modal = ({ dream, message, linkTo }) => {
         </div>{" "}
         {dream ? (
           <Link
-            prefetch={true}
             href={`/dreams/${dream._id}`}
             className={s.seeDream}
           >
