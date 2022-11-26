@@ -17,11 +17,11 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={styles.starsBox}>
+      {/* <div className={styles.starsBox}>
         <div className={styles.stars1}></div>
         <div className={styles.stars2}></div>
         <div className={styles.stars3}></div>
-      </div>
+      </div> */}
       <div className={styles.container}>
         <div className={styles.headingsBox}>
           <h1 className={styles.heading}> Welcome </h1>
