@@ -66,6 +66,8 @@ const DreamSingle = ({ dreams }) => {
 export async function getServerSideProps({ params }) {
   const data = await getDreams();
 
+  console.log(data);
+
   return {
     props: {
       dreams: data,

@@ -11,7 +11,7 @@ const DreamReel = ({ dreams }) => {
 
 export default DreamReel;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await getDreams();
   return {
     props: {
