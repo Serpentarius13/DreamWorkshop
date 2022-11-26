@@ -43,29 +43,19 @@ const DreamSingle = ({ dreams }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const data = await getDreams();
-  console.log(data);
+// export async function getStaticPaths() {
+//   const data = await getDreams();
+//   console.log(data);
 
-  return {
-    paths: data.map((el) => ({
-      params: { id: el._id },
-    })),
-    fallback: true,
-  };
-}
+//   return {
+//     paths: data.map((el) => ({
+//       params: { id: el._id },
+//     })),
+//     fallback: true,
+//   };
+// }
 
-export async function getStaticProps({ params }) {
-  const data = await getDreams();
-
-  return {
-    props: {
-      dreams: data,
-    },
-  };
-}
-
-// export async function getServerSideProps({ params }) {
+// export async function getStaticProps({ params }) {
 //   const data = await getDreams();
 
 //   return {
@@ -74,5 +64,15 @@ export async function getStaticProps({ params }) {
 //     },
 //   };
 // }
+
+export async function getServerSideProps({ params }) {
+  const data = await getDreams();
+
+  return {
+    props: {
+      dreams: data,
+    },
+  };
+}
 
 export default DreamSingle;
