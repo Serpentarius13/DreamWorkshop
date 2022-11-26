@@ -48,12 +48,12 @@
 
       border-radius: 15px;
     }
-    
+
     h4 {
       color: #7950f2;
     }
 
-    .timed { 
+    .timed {
       position: relative;
 
       width: 100%;
@@ -67,7 +67,6 @@
         opacity: 0.5;
       }
     }
-
 
     & input:not(:nth-child(4)) {
       border-bottom: 3px solid #a595d4;

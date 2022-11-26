@@ -5,7 +5,6 @@ import client from "../../apollo-client";
 import DreamItem from "../../components/dreamItem/dream.component";
 import { getDreams } from "./getDreams";
 import Link from "next/link";
-import s from "./DreamItem.module.scss";
 
 const link = {
   prev: null,
