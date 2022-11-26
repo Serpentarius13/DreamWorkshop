@@ -1,0 +1,66 @@
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import s from "./Modal.module.scss";
+import { useState } from "react";
+import Link from "next/link";
+
+const Modal = ({ dream, message, linkTo }) => {
+  const router = useRouter();
+
+  if (!message) return;
+
+  const style = message === "Success" ? true : false;
+
+  const [visibility, setVisibility] = useState(null);
+
+  useEffect(() => {
+    setVisibility(1);
+  }, []);
+
+  if (!visibility) return;
+
+  const routerGo = () => {
+    setVisibility(null);
+    router.push('/');
+  };
+
+  return (
+    <div
+      className={s.modalBox}
+      style={
+        style
+          ? { backgroundImage: "url(/success.jpg)" }
+          : { backgroundImage: "url(/failure.jpg)" }
+      }
+    >
+      <div
+        className={s.modal}
+        style={
+          style
+            ? { backgroundColor: "#6c3ef7" }
+            : { backgroundColor: "#868e96" }
+        }
+      >
+        {" "}
+        <span> {message} </span>{" "}
+        <div onClick={(e) => routerGo()} className={s.exit}>
+          {" "}
+          X
+        </div>{" "}
+        {dream ? (
+          <Link
+            prefetch={true}
+            href={`/dreams/${dream._id}`}
+            className={s.seeDream}
+          >
+            See dream
+          </Link>
+        ) : (
+          ""
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Modal;

@@ -1,0 +1,89 @@
+.modalBox {
+  z-index: 123123;
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  margin: 0 auto;
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.modal {
+  width: clamp(250px, 25%, 35%);
+  height: clamp(200px, 25%, 35%);
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+  animation: 1.5s bounce linear;
+
+  display: flex;
+  border-radius: 15px;
+
+  justify-content: center;
+  align-items: center;
+
+  //   position: relative;
+  background-color: #6c3ef7;
+
+  font-size: clamp(36px, 5vw, 60px);
+
+  color: white;
+
+  span {
+    font-family: "Ole", sans-serif;
+  }
+}
+
+.exit {
+  border-radius: 15px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  background-color: #e64980;
+  color: white;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.seeDream {
+  border-radius: 15px;
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  padding: 6px;
+  background-color: #e64980;
+
+  font-size: 15px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    top: -25%;
+  }
+
+  50% {
+    top: 60%;
+  }
+
+  75% {
+    top: 30%;
+  }
+
+  100% {
+    top: 40%;
+  }
+}
