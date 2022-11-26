@@ -15,7 +15,7 @@ const DreamItem = ({ data, size, prev, next }) => {
             {name ? (
               <p>
                 {" "}
-                Author's name: <span> {name} </span>{" "}
+                Author&apos;s name: <span> {name} </span>{" "}
               </p>
             ) : (
               ""

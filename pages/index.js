@@ -35,7 +35,7 @@ export default function Home() {
           </Link>
           <div className={styles.prophecy}></div>
           <Link href="/dreams" className={styles.linkBoxRead}>
-            <p> Read other people's dreams </p>
+            <p> Read other people&apos;s dreams </p>
           </Link>
         </div>
       </div>
