@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "bobanius",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,15 +11,12 @@
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@emailjs/browser": "^3.10.0",
-    "apollo-link-error": "^1.1.13",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "graphql": "^16.6.0",
-    "include-media": "^1.4.10",
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.56.1",
-    "sentence-generator": "^1.0.1"
+    "sass": "^1.56.1"
   }
 }

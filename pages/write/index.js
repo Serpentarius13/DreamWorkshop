@@ -1,4 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import DreamForm from "../../components/form/form.component";
 import Modal from "../../components/modal/modal.component";
 
@@ -29,8 +31,6 @@ const Mutation = gql`
 
 const WriteDream = () => {
   const [createDream, { data, loading, err }] = useMutation(Mutation);
-
-  console.log(data);
 
   return (
     <>

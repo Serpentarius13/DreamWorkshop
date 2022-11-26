@@ -1,11 +1,18 @@
 import s from "./Dream.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const DreamItem = ({ data, size, prev, next }) => {
   const { name, email, time, dreamName, description, _id } = data;
 
   const router = useRouter().query.hasOwnProperty("id");
+
+  console.log('bobus')
+
+
+  console.log(name);
   return (
     <div className={size ? s.dreamSmallBox : s.backgrounded}>
       <div>

@@ -41,9 +41,11 @@ const Modal = ({ dream, message, linkTo }) => {
           X
         </div>{" "}
         {dream ? (
-          <Link href={`/dreams/${dream._id}`} className={s.seeDream}>
-            See dream
-          </Link>
+          <div className={s.seeDream}>
+            <a href={`/dreams/${dream._id}`}>
+              Check dream
+            </a>{" "}
+          </div>
         ) : (
           ""
         )}

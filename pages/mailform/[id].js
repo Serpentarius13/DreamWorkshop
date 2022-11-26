@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getDreams } from "../../getDreams";
+
 import useLocalStorage from "../../components/hooks/useLocalStorage";
 
 import emailjs from "@emailjs/browser";
@@ -8,14 +8,35 @@ import { useRouter } from "next/router";
 import s from "../../components/form/Form.module.scss";
 import Modal from "../../components/modal/modal.component";
 
+import { useQuery } from "@apollo/client";
+
+import { gql } from "@apollo/client";
+
 const form = {
   fromName: "",
   message: "",
   fromEmail: "",
 };
 
-const SendDream = ({ dreams }) => {
+const query = gql`
+  query Query {
+    getAll {
+      name
+      time
+      email
+      dreamName
+      description
+      _id
+    }
+  }
+`;
+
+const SendDream = () => {
   const { id } = useRouter().query;
+
+  const { data, loading, error } = useQuery(query);
+
+  const dreams = data.getAll;
 
   const dream = dreams.find((el) => el._id === id);
 
@@ -123,12 +144,12 @@ const SendDream = ({ dreams }) => {
 
 export default SendDream;
 
-export async function getServerSideProps({ params }) {
-  const data = await getDreams();
+// export async function getServerSideProps({ params }) {
+//   const data = await getDreams();
 
-  return {
-    props: {
-      dreams: data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       dreams: data,
+//     },
+//   };
+// }
