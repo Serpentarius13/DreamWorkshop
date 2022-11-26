@@ -9,11 +9,20 @@ const Sidebar = ({ children }) => {
       {pathname ? (
         <div className={s.sidebar}>
           <div className={s.main}>
-            <Link className={s.link} href="/"> Main menu</Link>{" "}
+            <Link className={s.link} href="/">
+              {" "}
+              Main menu
+            </Link>{" "}
           </div>
           <div className={s.auxi}>
-            <Link className={s.link} href="/write"> Write dream </Link>
-            <Link className={s.link} href="/dreams"> Check dreams</Link>
+            <Link className={s.link} href="/write">
+              {" "}
+              Write dream{" "}
+            </Link>
+            <Link className={s.link} href="/dreams">
+              {" "}
+              Check dreams
+            </Link>
           </div>
         </div>
       ) : (

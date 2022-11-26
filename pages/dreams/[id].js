@@ -1,9 +1,7 @@
-
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import DreamItem from "../../components/dreamItem/dream.component";
 import { getDreams } from "../../getDreams";
-
 
 const link = {
   prev: null,

@@ -1,7 +1,7 @@
 import client from "../../apollo-client";
 import { gql } from "@apollo/client";
 import Link from "next/link";
-import { getDreams } from "./getDreams";
+import { getDreams } from "../../getDreams";
 import DreamPage from "../../components/dreamPage/dreamPage.component";
 
 const DreamReel = ({ dreams }) => {
