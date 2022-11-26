@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import useLocalStorage from "../../components/hooks/useLocalStorage";
 
@@ -36,11 +36,22 @@ const SendDream = () => {
 
   const { data, loading, error } = useQuery(query);
 
+  const [dream, setDream] = useState(null);
+
   const dreams = data.getAll;
 
-  const dream = dreams.find((el) => el._id === id);
+  useEffect(() => {
+    if (data) {
+      const dreams = data.getAll;
 
-  const { email, name, description, dreamName } = dream;
+      const dream = dreams.find((el) => el._id === id);
+      setDream(dream);
+    }
+  }, [data]);
+
+  const { email, name, description, dreamName } = dream
+    ? dream
+    : { email: "", name: "", description: "", dreamName: "" };
 
   const [formState, setFormState] = useState(form);
 
