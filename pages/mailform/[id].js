@@ -116,41 +116,44 @@ const SendDream = () => {
       );
   };
 
-  return (
-    <div
-      className={s.formContainer}
-      style={{ backgroundImage: "url(/email.jpg)" }}
-    >
-      <form className={s.formBox} onSubmit={sendMail}>
-        <input
-          type="email"
-          name="fromEmail"
-          value={fromEmail}
-          placeholder="Your email for responses"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="fromName"
-          value={fromName}
-          placeholder="Your name"
-          onChange={handleChange}
-          required
-          className={s.mailFormName}
-        />
-        <textarea
-          type="text"
-          name="message"
-          value={message}
-          placeholder="Your message for responses"
-          onChange={handleChange}
-          required
-        />
-        <button type="submit"> Click me! </button>
-      </form>
-      {modal ? <Modal message={modal} /> : ""}
-    </div>
-  );
+  if(!dream) return <div> BOBUS </div>
+
+  if (dream)
+    return (
+      <div
+        className={s.formContainer}
+        style={{ backgroundImage: "url(/email.jpg)" }}
+      >
+        <form className={s.formBox} onSubmit={sendMail}>
+          <input
+            type="email"
+            name="fromEmail"
+            value={fromEmail}
+            placeholder="Your email for responses"
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="fromName"
+            value={fromName}
+            placeholder="Your name"
+            onChange={handleChange}
+            required
+            className={s.mailFormName}
+          />
+          <textarea
+            type="text"
+            name="message"
+            value={message}
+            placeholder="Your message for responses"
+            onChange={handleChange}
+            required
+          />
+          <button type="submit"> Click me! </button>
+        </form>
+        {modal ? <Modal message={modal} /> : ""}
+      </div>
+    );
 };
 
 export default SendDream;
