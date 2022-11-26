@@ -87,7 +87,7 @@ const SendDream = ({ dreams }) => {
   return (
     <div
       className={s.formContainer}
-      // style={{ backgroundImage: "url(/email.jpg)" }}
+      style={{ backgroundImage: "url(/email.jpg)" }}
     >
       <form className={s.formBox} onSubmit={sendMail}>
         <input

@@ -20,19 +20,19 @@ const Modal = ({ dream, message, linkTo }) => {
   return (
     <div
       className={s.modalBox}
-    //   style={
-    //     style
-    //       ? { backgroundImage: "url(/success.jpg)" }
-    //       : { backgroundImage: "url(/failure.jpg)" }
-    //   }
+      style={
+        style
+          ? { backgroundImage: "url(/success.jpg)" }
+          : { backgroundImage: "url(/failure.jpg)" }
+      }
     >
       <div
         className={s.modal}
-        // style={
-        //   style
-        //     ? { backgroundColor: "#6c3ef7" }
-        //     : { backgroundColor: "#868e96" }
-        // }
+        style={
+          style
+            ? { backgroundColor: "#6c3ef7" }
+            : { backgroundColor: "#868e96" }
+        }
       >
         {" "}
         <span> {message} </span>{" "}
