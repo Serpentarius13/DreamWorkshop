@@ -36,12 +36,11 @@ const SendDream = () => {
 
   const { data, loading, error } = useQuery(query);
 
-  const [dream, setDream] = useState(null);
-
-  const dreams = data.getAll;
+  const [dream, setDream] = useState(null)
 
   useEffect(() => {
     if (data) {
+      console.log(data, "Bobus");
       const dreams = data.getAll;
 
       const dream = dreams.find((el) => el._id === id);
@@ -68,6 +67,13 @@ const SendDream = () => {
 
   const sendMail = (event) => {
     event.preventDefault();
+
+    if (sent === id.toString()) {
+      alert(
+        "You have already sent email to this user. If he responded, you can continue talking with him on yourself."
+      );
+      return;
+    }
 
     const to_name = name ? name : "Incognito";
 
@@ -102,21 +108,15 @@ const SendDream = () => {
       )
       .then(
         (result) => {
-          if (sent === id.toString()) {
-            alert(
-              "You have already sent email to this user. If he responded, you can continue talking with him on yourself."
-            );
-            return;
-          } else {
-            setSent(id.toString());
-          }
+          setSent(id.toString());
+
           showModal("Success");
         },
         (error) => showModal("Failure")
       );
   };
 
-  if(!dream) return <div> BOBUS </div>
+  if (!dream) return <div> BOBUS </div>;
 
   if (dream)
     return (
