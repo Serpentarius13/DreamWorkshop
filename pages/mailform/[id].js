@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getDreams } from "../dreams/getDreams";
+import { getDreams } from "../../getDreams";
 import useLocalStorage from "../../components/hooks/useLocalStorage";
 
 import emailjs from "@emailjs/browser";
