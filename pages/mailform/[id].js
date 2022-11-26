@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import { getDreams } from "../dreams/getDreams";
 import useLocalStorage from "../../components/hooks/useLocalStorage";
 
@@ -87,7 +87,7 @@ const SendDream = ({ dreams }) => {
   return (
     <div
       className={s.formContainer}
-      style={{ backgroundImage: "url(/email.jpg)" }}
+      // style={{ backgroundImage: "url(/email.jpg)" }}
     >
       <form className={s.formBox} onSubmit={sendMail}>
         <input

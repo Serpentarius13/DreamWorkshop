@@ -1,10 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
-import Router, { useRouter } from "next/router";
+
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import client from "../../apollo-client";
 import DreamItem from "../../components/dreamItem/dream.component";
 import { getDreams } from "./getDreams";
-import Link from "next/link";
+
 
 const link = {
   prev: null,

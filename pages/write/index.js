@@ -1,11 +1,6 @@
-import { useState } from "react";
-
 import { gql, useMutation } from "@apollo/client";
 import DreamForm from "../../components/form/form.component";
-import DreamItem from "../../components/dreamItem/dream.component";
 import Modal from "../../components/modal/modal.component";
-
-import {onError} from 'apollo-link-error'
 
 const Mutation = gql`
   mutation Mutation(

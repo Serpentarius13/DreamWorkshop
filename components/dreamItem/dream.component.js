@@ -1,7 +1,6 @@
 import s from "./Dream.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 const DreamItem = ({ data, size, prev, next }) => {
   const { name, email, time, dreamName, description, _id } = data;
@@ -60,7 +59,10 @@ const DreamItem = ({ data, size, prev, next }) => {
         )}
 
         {email && !size ? (
-          <Link className={s.send} href={`/mailform/${_id}`}> Send email to the dreamer! </Link>
+          <Link className={s.send} href={`/mailform/${_id}`}>
+            {" "}
+            Send email to the dreamer!{" "}
+          </Link>
         ) : (
           ""
         )}
