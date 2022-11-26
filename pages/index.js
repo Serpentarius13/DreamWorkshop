@@ -21,6 +21,8 @@ export default function Home() {
         <div className={styles.stars2}></div>
         <div className={styles.stars3}></div>
       </div> */}
+      
+
       <div className={styles.container}>
         <div className={styles.headingsBox}>
           <h1 className={styles.heading}> Welcome </h1>

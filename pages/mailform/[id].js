@@ -40,7 +40,6 @@ const SendDream = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(data, "Bobus");
       const dreams = data.getAll;
 
       const dream = dreams.find((el) => el._id === id);

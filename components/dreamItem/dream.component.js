@@ -9,10 +9,6 @@ const DreamItem = ({ data, size, prev, next }) => {
 
   const router = useRouter().query.hasOwnProperty("id");
 
-  console.log('bobus')
-
-
-  console.log(name);
   return (
     <div className={size ? s.dreamSmallBox : s.backgrounded}>
       <div>
@@ -26,7 +22,7 @@ const DreamItem = ({ data, size, prev, next }) => {
             ) : (
               ""
             )}
-            {time ? <p> Date of dream: {time} </p> : ""}
+            {time ? <p> Time of dream: {time} </p> : ""}
           </div>
         ) : (
           ""

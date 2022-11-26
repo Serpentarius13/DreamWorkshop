@@ -28,7 +28,7 @@ const DreamForm = ({ sendHandler }) => {
     try {
       await sendHandler({ variables: dreamState });
     } catch (err) {
-      console.log(err);
+
       setModal("Try again later please.");
     }
   };
