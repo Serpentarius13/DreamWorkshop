@@ -41,7 +41,6 @@ const WriteDream = () => {
         <meta
           name="description"
           content="Dream workshop - write your dream"
-          lang="en"
         />
         <link rel="icon" href="/jung.jpg"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1" />

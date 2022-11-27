@@ -118,7 +118,7 @@ const SendDream = () => {
           <meta
             name="description"
             content="Dream workshop - send email to dreamer"
-            lang="en"
+
           />
           <link rel="icon" href="/jung.jpg"></link>
           <meta name="viewport" content="width=device-width, initial-scale=1" />

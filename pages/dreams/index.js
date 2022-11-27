@@ -20,7 +20,7 @@ const DreamReel = () => {
         <meta
           name="description"
           content="Dream workshop - read dreams"
-          lang="en"
+
         />
         <link rel="icon" href="/jung.jpg"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
