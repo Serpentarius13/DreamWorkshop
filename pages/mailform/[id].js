@@ -10,6 +10,9 @@ import Modal from "../../components/modal/modal.component";
 
 import getDreams from "../../utils/getDreams";
 
+import Loader from "../../components/loading/loader.component";
+
+
 const form = {
   fromName: "",
   message: "",
@@ -100,7 +103,8 @@ const SendDream = () => {
       );
   };
 
-  if (!dream) return <div> BOBUS </div>;
+  if(loading) return <Loader></Loader>
+  if(error) return <Modal message={"Try again later"}></Modal>
 
   if (dream)
     return (

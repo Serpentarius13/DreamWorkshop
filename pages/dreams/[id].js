@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import DreamItem from "../../components/dreamItem/dream.component";
+import Loader from "../../components/loading/loader.component";
+import Modal from "../../components/modal/modal.component";
 import getDreams from "../../utils/getDreams";
 
 const link = {
@@ -41,6 +43,8 @@ const DreamSingle = () => {
   }, [data, id]);
 
 
+  if(loading) return <Loader></Loader>
+  if(error) return <Modal message={"Try again later"}></Modal>
   return <>{dream && <DreamItem prev={prev} next={next} data={dream} />}</>;
 };
 
