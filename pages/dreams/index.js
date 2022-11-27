@@ -22,6 +22,7 @@ const query = gql`
 const DreamReel = () => {
   const { data, loading, error } = useQuery(query);
 
+
   return <>{data && <DreamPage dreams={data.getAll}></DreamPage>}</>;
 };
 

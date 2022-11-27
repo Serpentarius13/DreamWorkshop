@@ -10,7 +10,7 @@
   align-items: center;
 
   .formBox {
-    width: 45rem;
+    width: clamp(15rem, 70vw, 40rem);
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     align-items: center;
     gap: 20px;
 
-    margin-left: 48px;
+    margin-left: clamp(1px, 4vw, 150px);
 
     padding: 48px 0;
 
@@ -28,13 +28,6 @@
     animation: shadowing 3s linear infinite;
 
     position: relative;
-    @media (max-width: 800px) {
-      width: 28rem;
-    }
-
-    @media (max-width: 600px) {
-      width: 23rem;
-    }
 
     & input,
     textarea,
@@ -62,9 +55,12 @@
       place-items: center;
       label {
         position: absolute;
-        left: 45%;
+        left: 43%;
+        top: clamp(3%, 0.5vh, 15%);
         color: #7950f2;
         opacity: 0.5;
+
+        font-size: clamp(9px, 2vw, 16px);
       }
     }
 
