@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
 .modalBox {
   z-index: 123123;
   width: 100vw;
@@ -27,7 +28,7 @@
 
   align-items: center;
   justify-content: center;
-
+  text-align: center;
 
   background-color: #6c3ef7;
 
@@ -35,8 +36,11 @@
 
   color: white;
 
+  overflow:visible;
+
   span {
-    font-family: "Oleo Script", sans-serif;
+    cursor: pointer;
+    font-family: "Playfair Display SC", serif;
   }
 }
 
@@ -55,8 +59,6 @@
 
   cursor: pointer;
   font-size: 18px;
-
-
 }
 
 .seeDream {

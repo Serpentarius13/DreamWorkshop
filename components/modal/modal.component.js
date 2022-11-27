@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import s from "./Modal.module.scss";
 import { useState } from "react";
 import Link from "next/link";
+import translate from "translate";
 
 const Modal = ({ dream, message, linkTo }) => {
   const router = useRouter();
@@ -9,8 +10,19 @@ const Modal = ({ dream, message, linkTo }) => {
 
   const [visibility, setVisibility] = useState(1);
 
+  const [bobus, vobus] = useState(null);
+
   if (!message) return;
   if (!visibility) return;
+
+  const checkTranslation = async () => {
+    if(bobus) return;
+    console.log(vobus)
+    if (message.length > 10) {
+      const translated = await translate(message, { from: "la" });
+      vobus(translated);
+    }
+  };
 
   return (
     <div
@@ -30,7 +42,7 @@ const Modal = ({ dream, message, linkTo }) => {
         }
       >
         {" "}
-        <span> {message} </span>{" "}
+        <span onClick={(e) => checkTranslation()}> {bobus || message} </span>{" "}
         <div className={s.exit}>
           {" "}
           <a href="/"> X </a>

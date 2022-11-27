@@ -6,13 +6,19 @@ import axios from "axios";
 
 import Modal from "../modal/modal.component";
 import { endpoint } from "../../apollo-client";
+import { gql, useQuery } from "@apollo/client";
 
 const Stars = () => {
   const [modVis, setModVis] = useState(null);
 
-  const pow = async () => {
-    const data = await axios.get(`${endpoint}/content`);
-    setModVis(data.data);
+  const { data, error, loading } = useQuery(gql`
+    query Query {
+      sentence
+    }
+  `);
+
+  const pow = () => {
+    if (data) setModVis(data.sentence);
   };
 
   return (
@@ -55,8 +61,6 @@ const Stars = () => {
         <div onClick={pow} className={stars.star} />
         <div onClick={pow} className={stars.star} />
         <div onClick={pow} className={stars.star} />
-
-
       </div>
     </>
   );
