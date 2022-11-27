@@ -13,8 +13,8 @@ const Modal = ({ dream, message, linkTo }) => {
   if (!visibility) return;
 
   const routerGo = () => {
-    setVisibility(null);
     router.push("/");
+    setVisibility(null);
   };
 
   return (

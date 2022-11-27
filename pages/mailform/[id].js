@@ -8,9 +8,7 @@ import { useRouter } from "next/router";
 import s from "../../components/form/Form.module.scss";
 import Modal from "../../components/modal/modal.component";
 
-import { useQuery } from "@apollo/client";
-
-import { gql } from "@apollo/client";
+import getDreams from "../../utils/getDreams";
 
 const form = {
   fromName: "",
@@ -18,25 +16,12 @@ const form = {
   fromEmail: "",
 };
 
-const query = gql`
-  query Query {
-    getAll {
-      name
-      time
-      email
-      dreamName
-      description
-      _id
-    }
-  }
-`;
-
 const SendDream = () => {
   const { id } = useRouter().query;
 
-  const { data, loading, error } = useQuery(query);
+  const { data, loading, error } = getDreams();
 
-  const [dream, setDream] = useState(null)
+  const [dream, setDream] = useState(null);
 
   useEffect(() => {
     if (data) {

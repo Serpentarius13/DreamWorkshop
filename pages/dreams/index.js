@@ -1,27 +1,11 @@
 import client from "../../apollo-client";
-import { gql } from "@apollo/client";
 import Link from "next/link";
 
 import DreamPage from "../../components/dreamPage/dreamPage.component";
-
-import { useQuery } from "@apollo/client";
-
-const query = gql`
-  query Query {
-    getAll {
-      name
-      time
-      email
-      dreamName
-      description
-      _id
-    }
-  }
-`;
+import getDreams from "../../utils/getDreams";
 
 const DreamReel = () => {
-  const { data, loading, error } = useQuery(query);
-
+  const { data, loading, error } = getDreams();
 
   return <>{data && <DreamPage dreams={data.getAll}></DreamPage>}</>;
 };

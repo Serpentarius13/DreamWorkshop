@@ -1,23 +1,7 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import DreamItem from "../../components/dreamItem/dream.component";
-
-import { useQuery } from "@apollo/client";
-
-import { gql } from "@apollo/client";
-
-const query = gql`
-  query Query {
-    getAll {
-      name
-      time
-      email
-      dreamName
-      description
-      _id
-    }
-  }
-`;
+import getDreams from "../../utils/getDreams";
 
 const link = {
   prev: null,
@@ -26,20 +10,22 @@ const link = {
 
 const DreamSingle = () => {
   const router = useRouter();
+
   const { id } = router.query;
-  const { data, loading, error } = useQuery(query);
+  const { data, loading, error } = getDreams();
 
   const [dream, setDream] = useState(null);
 
   const [linkState, setLinkState] = useState(link);
+  const { prev, next } = linkState;
 
   useEffect(() => {
     if (data) {
-      const getAlled = data.getAll;
-      const index = getAlled.indexOf(dream);
+      const dreams = data.getAll;
+      const index = dreams.indexOf(dream);
 
-      const prev = getAlled[index - 1];
-      const next = getAlled[index + 1];
+      const prev = dreams[index - 1];
+      const next = dreams[index + 1];
 
       setLinkState({ prev, next });
     }
@@ -48,14 +34,12 @@ const DreamSingle = () => {
   useEffect(() => {
     if (data) {
       const dreams = data.getAll;
-      const dream = dreams.find((el) => el._id === id);
+      const dream = dreams.find((dream) => dream._id === id);
+
       setDream(dream);
     }
   }, [data, id]);
 
-  const { prev, next } = linkState;
-
-  if (router.isFallback) return <div> Boba </div>;
 
   return <>{dream && <DreamItem prev={prev} next={next} data={dream} />}</>;
 };
