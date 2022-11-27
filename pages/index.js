@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import styles from "../styles/Home.module.scss";
 
+import stars from "../styles/Stars.module.css";
+
 export default function Home() {
   return (
     <>
@@ -16,12 +18,11 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={styles.starsBox}>
-        <div className={styles.stars1}></div>
-        <div className={styles.stars2}></div>
-        <div className={styles.stars3}></div>
+      <div className={stars.starsBox}>
+        <div className={stars.stars1}></div>
+        <div className={stars.stars2}></div>
+        <div className={stars.stars3}></div>
       </div>
-      
 
       <div className={styles.container}>
         <div className={styles.headingsBox}>
