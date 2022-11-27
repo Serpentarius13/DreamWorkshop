@@ -22,7 +22,7 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.headingsBox}>
           <h1 className={styles.heading}> Welcome </h1>
-          <h3 className={styles.headingThree}> to dream workshop </h3>
+          <h1 className={styles.headingThree}> to dream workshop </h1>
         </div>
 
         <div className={styles.linksContainer}>
