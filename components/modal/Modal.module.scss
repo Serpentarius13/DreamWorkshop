@@ -17,23 +17,26 @@
   top: 40%;
   transform: translate(-50%, -50%);
 
+  padding: 18px;
+
   position: absolute;
   animation: 1.5s bounce linear;
 
   display: flex;
   border-radius: 15px;
 
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
 
   background-color: #6c3ef7;
 
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(12px, 2vw, 60px);
 
   color: white;
 
   span {
-    font-family: "Ole", sans-serif;
+    font-family: "Oleo Script", sans-serif;
   }
 }
 
@@ -52,6 +55,8 @@
 
   cursor: pointer;
   font-size: 18px;
+
+
 }
 
 .seeDream {

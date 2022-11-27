@@ -1,6 +1,6 @@
 @mixin link {
-  flex: 35%;
-  height: 50%;
+  width: clamp(300px, 50%, 600px);
+  height: clamp(200px, 60%, 400px);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -9,6 +9,8 @@
   background-size: 150% 150%;
 
   border-radius: 50px;
+
+  z-index: 123;
 
   p {
     padding: 24px;
@@ -45,10 +47,16 @@
   .linksContainer {
     flex: 85%;
 
+    width: 75%;
+
+    @media (max-width: 600px) {
+      width: 95%;
+    }
+
+    gap: 12px;
     display: flex;
     align-items: center;
-    width: 85%;
-    gap: 18px;
+    justify-content: space-around;
 
     .linkBoxWrite {
       @include link;
@@ -70,7 +78,6 @@
       background-position: center;
       animation: radiate 5s infinite linear;
       text-align: center;
-      z-index: 123;
     }
 
     // .prophecy {
@@ -109,4 +116,3 @@
     background-size: 150% 150%;
   }
 }
-

@@ -1,7 +1,9 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
+export const endpoint = 'https://dream-workshop.herokuapp.com/'
+
 const client = new ApolloClient({
-  uri: 'https://dream-workshop.herokuapp.com/',
+  uri: endpoint,
   cache: new InMemoryCache(),
 });
 

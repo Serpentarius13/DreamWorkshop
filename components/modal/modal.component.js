@@ -12,11 +12,6 @@ const Modal = ({ dream, message, linkTo }) => {
   if (!message) return;
   if (!visibility) return;
 
-  const routerGo = () => {
-    router.push("/");
-    setVisibility(null);
-  };
-
   return (
     <div
       className={s.modalBox}
@@ -36,15 +31,13 @@ const Modal = ({ dream, message, linkTo }) => {
       >
         {" "}
         <span> {message} </span>{" "}
-        <div onClick={(e) => routerGo()} className={s.exit}>
+        <div className={s.exit}>
           {" "}
-          X
+          <a href="/"> X </a>
         </div>{" "}
         {dream ? (
           <div className={s.seeDream}>
-            <a href={`/dreams/${dream._id}`}>
-              Check dream
-            </a>{" "}
+            <a href={`/dreams/${dream._id}`}>Check dream</a>{" "}
           </div>
         ) : (
           ""
