@@ -5,6 +5,7 @@ import Loader from "../../components/loading/loader.component";
 import Modal from "../../components/modal/modal.component";
 import getDreams from "../../utils/getDreams";
 
+import Head  from "next/head";
 const link = {
   prev: null,
   next: null,
@@ -42,10 +43,24 @@ const DreamSingle = () => {
     }
   }, [data, id]);
 
-
-  if(loading) return <Loader></Loader>
-  if(error) return <Modal message={"Try again later"}></Modal>
-  return <>{dream && <DreamItem prev={prev} next={next} data={dream} />}</>;
+  if (loading) return <Loader></Loader>;
+  if (error) return <Modal message={"Try again later"}></Modal>;
+  return (
+    <>
+      {" "}
+      <Head>
+        <title> Read dream </title>
+        <meta
+          name="description"
+          content="Dream workshop - read dream"
+          lang="en"
+        />
+        <link rel="icon" href="/jung.jpg"></link>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      {dream && <DreamItem prev={prev} next={next} data={dream} />}
+    </>
+  );
 };
 
 // export async function getStaticPaths() {

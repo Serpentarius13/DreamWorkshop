@@ -12,6 +12,7 @@ import getDreams from "../../utils/getDreams";
 
 import Loader from "../../components/loading/loader.component";
 
+import Head from "next/head";
 
 const form = {
   fromName: "",
@@ -103,8 +104,8 @@ const SendDream = () => {
       );
   };
 
-  if(loading) return <Loader></Loader>
-  if(error) return <Modal message={"Try again later"}></Modal>
+  if (loading) return <Loader></Loader>;
+  if (error) return <Modal message={"Try again later"}></Modal>;
 
   if (dream)
     return (
@@ -112,6 +113,16 @@ const SendDream = () => {
         className={s.formContainer}
         style={{ backgroundImage: "url(/email.jpg)" }}
       >
+        <Head>
+          <title> Send email to dreamer </title>
+          <meta
+            name="description"
+            content="Dream workshop - send email to dreamer"
+            lang="en"
+          />
+          <link rel="icon" href="/jung.jpg"></link>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <form className={s.formBox} onSubmit={sendMail}>
           <input
             type="email"

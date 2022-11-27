@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import DreamForm from "../../components/form/form.component";
 import Modal from "../../components/modal/modal.component";
 
+import Head from "next/head";
+
 const Mutation = gql`
   mutation Mutation(
     $name: String
@@ -34,6 +36,16 @@ const WriteDream = () => {
 
   return (
     <>
+      <Head>
+        <title> Write your dream! </title>
+        <meta
+          name="description"
+          content="Dream workshop - write your dream"
+          lang="en"
+        />
+        <link rel="icon" href="/jung.jpg"></link>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       {data ? (
         <Modal dream={data.newDream} message={"Success"} />
       ) : (
